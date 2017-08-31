@@ -61,15 +61,24 @@ quotesArray.splice(randomStart, 1);
 return quote;
 }
 
+function getRandomColor () {
+  var colors = "#";
+  var hexColor ="0123456789ABCDEF";
+  
+}
 // Function named printQuote to call getRandomQuote and stores returned quote in a Variable
 function printQuote() {
     var toPrint = getRandomQuote();
-    //var randomColor = getRandomColor();
+    var randomColor = getRandomColor();
 
     var quotekeys = Object.keys(toPrint);
     var textInHTML = '<p class="quote">' + toPrint['quote'] +  '<p class="source">' + toPrint['source'];
 
+    //to print on div 'quote-box
     document.getElementById('quote-box').innerHTML = textInHTML;
+    // change background color everytime new quote is loaded
+    document.body.style.backgroundColor = randomColor;
+    document.getElementById('loadQuote').style.backgroundColor = randomColor;
 
 }
 
